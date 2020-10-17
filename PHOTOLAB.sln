@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-PHOTOLAB-Style", "2-PHOTO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-PHOTOLAB-Data-Binding", "3-PHOTOLAB-Data-Binding\3-PHOTOLAB-Data-Binding.csproj", "{9C0BCB80-4B44-4871-ABE0-E38CEDD449EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4-PHOTOLAB-Adaptive-Layout", "4-PHOTOLAB-Adaptive-Layout\4-PHOTOLAB-Adaptive-Layout.csproj", "{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -81,6 +83,24 @@ Global
 		{9C0BCB80-4B44-4871-ABE0-E38CEDD449EC}.Release|x86.ActiveCfg = Release|x86
 		{9C0BCB80-4B44-4871-ABE0-E38CEDD449EC}.Release|x86.Build.0 = Release|x86
 		{9C0BCB80-4B44-4871-ABE0-E38CEDD449EC}.Release|x86.Deploy.0 = Release|x86
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Debug|ARM.ActiveCfg = Debug|ARM
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Debug|ARM.Build.0 = Debug|ARM
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Debug|ARM.Deploy.0 = Debug|ARM
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Debug|x64.ActiveCfg = Debug|x64
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Debug|x64.Build.0 = Debug|x64
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Debug|x64.Deploy.0 = Debug|x64
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Debug|x86.ActiveCfg = Debug|x86
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Debug|x86.Build.0 = Debug|x86
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Debug|x86.Deploy.0 = Debug|x86
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Release|ARM.ActiveCfg = Release|ARM
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Release|ARM.Build.0 = Release|ARM
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Release|ARM.Deploy.0 = Release|ARM
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Release|x64.ActiveCfg = Release|x64
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Release|x64.Build.0 = Release|x64
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Release|x64.Deploy.0 = Release|x64
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Release|x86.ActiveCfg = Release|x86
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Release|x86.Build.0 = Release|x86
+		{DFAF0460-6E94-474C-BC7E-F1D0DF1EDB7E}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
