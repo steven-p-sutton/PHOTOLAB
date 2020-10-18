@@ -22,6 +22,11 @@
 //  THE SOFTWARE. 
 -->
 
+<!--
+    Using tutorial
+    https://docs.microsoft.com/en-us/windows/uwp/data-binding/xaml-basics-data-binding
+-->
+
 <Page x:Name="page"
       x:Class="PhotoLab.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
