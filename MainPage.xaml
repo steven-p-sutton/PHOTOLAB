@@ -28,6 +28,7 @@
 
     Part 1: Replace the placeholders
     Part 2: Use binding to connect the gallery UI to the images
+    Part 3: Set up the zoom slider
 -->
 
 <Page x:Name="page"
@@ -74,8 +75,8 @@
 
         <DataTemplate x:Key="ImageGridView_DefaultItemTemplate"
                       x:DataType="local:ImageFileInfo">
-            <Grid Height="200"
-                  Width="200"
+            <Grid Height="{Binding Value, ElementName=ZoomSlider}"
+                  Width="{Binding Value, ElementName=ZoomSlider}"
                   Margin="{StaticResource LargeItemMargin}">
                 <Grid.RowDefinitions>
                     <RowDefinition />
