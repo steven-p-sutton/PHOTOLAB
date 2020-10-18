@@ -27,6 +27,7 @@
     https://docs.microsoft.com/en-us/windows/uwp/data-binding/xaml-basics-data-binding
 
     Part 1: Replace the placeholders
+    Part 2: Use binding to connect the gallery UI to the images
 -->
 
 <Page x:Name="page"
@@ -128,9 +129,13 @@
             <AppBarButton Icon="Zoom"
                           Label="Zoom"
                           Flyout="{StaticResource zoomFlyout}" />
+            <AppBarButton Icon="Delete"
+              Label="Delete selected image"
+              Click="{x:Bind DeleteSelectedImage}" />
         </CommandBar>
 
-        <GridView x:Name="ImageGridView"               
+        <GridView x:Name="ImageGridView"
+                  ItemsSource="{x:Bind Images}"
                   animations:ReorderGridAnimation.Duration="400"
                   Margin="0,0,0,8"
                   IsItemClickEnabled="True"

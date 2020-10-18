@@ -59,6 +59,9 @@ namespace PhotoLab
             persistedItem = item;
         }
 
+        // Temp delete button click event to test image collection reloading for Part 2
+        private void DeleteSelectedImage() => Images.Remove(ImageGridView.SelectedItem as ImageFileInfo);
+
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
@@ -132,8 +135,8 @@ namespace PhotoLab
                 ContentDialogResult resultNotUsed = await unsupportedFilesDialog.ShowAsync();
             }
 
-            // Remove this when replaced with XAML bindings
-            ImageGridView.ItemsSource = Images;
+            // Remove this when replaced with XAML bindings in Part 2 of the tutorial
+            // ImageGridView.ItemsSource = Images;
         }
 
         public async static Task<ImageFileInfo> LoadImageInfo(StorageFile file)
