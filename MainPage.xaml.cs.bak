@@ -61,6 +61,9 @@ namespace PhotoLab
             persistedItem = item;
         }
 
+        // Temp delete button click event to test image collection reloading for Part 2
+        private void DeleteSelectedImage() => Images.Remove(ImageGridView.SelectedItem as ImageFileInfo);
+
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
@@ -201,10 +204,6 @@ namespace PhotoLab
 
         private void ImageGridView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            // Prepare the connected animation for navigation to the detail page.
-            persistedItem = e.ClickedItem as ImageFileInfo;
-            ImageGridView.PrepareConnectedAnimation("itemAnimation", e.ClickedItem, "ItemImage");
-
             this.Frame.Navigate(typeof(DetailPage), e.ClickedItem);
         }
     }
