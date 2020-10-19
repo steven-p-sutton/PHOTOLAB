@@ -22,6 +22,14 @@
 //  THE SOFTWARE. 
 -->
 
+<!--
+    Tutorial: Create adaptive layouts
+	https://docs.microsoft.com/en-us/windows/uwp/design/basics/xaml-basics-adaptive-layout
+
+	    Part 1: Define window breakpoints
+		    - Add window breakpoints
+ -->
+
 <Page x:Name="page"
       x:Class="PhotoLab.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
