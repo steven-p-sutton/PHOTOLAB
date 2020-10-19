@@ -27,11 +27,26 @@
     https://docs.microsoft.com/en-us/windows/uwp/data-binding/xaml-basics-data-binding
 
     Part 1: Replace the placeholders
+        - Replace the placeholders with one-time bindings
+    
     Part 2: Use binding to connect the gallery UI to the images
+        - Bind the main GridView control to the Images collection
+        - Add a delete button
+    
     Part 3: Set up the zoom slider
+        - Bind the image data template to the zoom slider
+    
+    Part 4: Improve the zoom experience
+        - Create the ItemSize property so that it updates the UI
+        - Update the ItemSize property value
+    
+    Part 5: Enable user edits
+        - Attach the DetailPage
+        - Make the editing controls interactive
 -->
 
 <Page x:Name="page"
+      SizeChanged="{x:Bind DetermineItemSize}"
       x:Class="PhotoLab.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -55,6 +70,7 @@
         <Flyout x:Key="zoomFlyout">
             <StackPanel>
                 <Slider x:Name="ZoomSlider"
+                        ValueChanged="{x:Bind DetermineItemSize}"
                         Minimum="180"
                         Maximum="540"
                         Value="270"
@@ -63,6 +79,7 @@
                         SnapsTo="Ticks"
                         Header="Grid item size" />
                 <ToggleSwitch x:Name="FitScreenToggle"
+                              Toggled="{x:Bind DetermineItemSize}"
                               Header="Fit to screen"
                               ToolTipService.ToolTip="Resize images to use available space." />
             </StackPanel>
@@ -75,9 +92,9 @@
 
         <DataTemplate x:Key="ImageGridView_DefaultItemTemplate"
                       x:DataType="local:ImageFileInfo">
-            <Grid Height="{Binding Value, ElementName=ZoomSlider}"
-                  Width="{Binding Value, ElementName=ZoomSlider}"
-                  Margin="{StaticResource LargeItemMargin}">
+                <Grid Height="{Binding ItemSize, ElementName=page}"
+                    Width="{Binding ItemSize, ElementName=page}"
+                    Margin="{StaticResource LargeItemMargin}">
                 <Grid.RowDefinitions>
                     <RowDefinition />
                     <RowDefinition Height="Auto" />
@@ -87,7 +104,7 @@
                        Stretch="Uniform"/>
                 <StackPanel Orientation="Vertical"
                             Grid.Row="1">
-                    <TextBlock Text="{x:Bind ImageTitle}"
+                    <TextBlock Text="{x:Bind ImageTitle, Mode=TwoWay}"
                                HorizontalAlignment="Center"
                                Style="{StaticResource SubtitleTextBlockStyle}" />
                     <StackPanel Orientation="Horizontal"
@@ -100,7 +117,7 @@
                                    Style="{StaticResource CaptionTextBlockStyle}"
                                    Margin="8,0,0,0" />
                     </StackPanel>
-                    <muxc:RatingControl Value="{x:Bind ImageRating}"
+                    <muxc:RatingControl Value="{x:Bind ImageRating, Mode=TwoWay}"
                                         IsReadOnly="True"/>
                 </StackPanel>
             </Grid>
@@ -140,6 +157,7 @@
                   animations:ReorderGridAnimation.Duration="400"
                   Margin="0,0,0,8"
                   IsItemClickEnabled="True"
+                  ItemClick="ImageGridView_ItemClick"
                   RelativePanel.AlignLeftWithPanel="True"
                   RelativePanel.AlignRightWithPanel="True"
                   RelativePanel.Below="TitleTextBlock"
