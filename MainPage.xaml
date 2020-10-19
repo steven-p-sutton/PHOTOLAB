@@ -43,6 +43,9 @@
     Part 5: Enable user edits
         - Attach the DetailPage
         - Make the editing controls interactive
+
+    Part 6: Format values through function binding
+        - Bind the effect-slider labels and format the values for display
 -->
 
 <Page x:Name="page"
