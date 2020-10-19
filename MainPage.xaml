@@ -28,6 +28,9 @@
 
 	    Part 1: Define window breakpoints
 		    - Add window breakpoints
+
+    	Part 2: Add a data template for small window sizes
+		    - Create a new DataTemplate
  -->
 
 <Page x:Name="page"
@@ -121,6 +124,41 @@
                TargetType="GridViewItem" />
         
         <!-- Add the small DataTemplate here. -->
+        <DataTemplate x:Key="ImageGridView_SmallItemTemplate"
+             x:DataType="local:ImageFileInfo">
+
+            <!-- Create image grid -->
+            <Grid Height="{Binding ItemSize, ElementName=page}"
+                Width="{Binding ItemSize, ElementName=page}">
+
+                <!-- Place image in grid, stretching it to fill the pane-->
+                <Image x:Name="ItemImage"
+                    Source="{x:Bind ImageSource, Mode=OneWay}"
+                    Stretch="UniformToFill">
+                    <!-- Add a tooltip to the image that displays metadata -->
+                    <ToolTipService.ToolTip>
+                        <ToolTip x:Name="tooltip">
+                            <StackPanel Orientation="Vertical"
+                                        Grid.Row="1">
+                                <TextBlock Text="{x:Bind ImageTitle, Mode=OneWay}"
+                                           HorizontalAlignment="Center"
+                                           Style="{StaticResource SubtitleTextBlockStyle}" />
+                                <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Center">
+                                    <TextBlock Text="{x:Bind ImageFileType}"
+                                               HorizontalAlignment="Center"
+                                               Style="{StaticResource CaptionTextBlockStyle}" />
+                                    <TextBlock Text="{x:Bind ImageDimensions}"
+                                               HorizontalAlignment="Center"
+                                               Style="{StaticResource CaptionTextBlockStyle}"
+                                               Margin="8,0,0,0" />
+                                </StackPanel>
+                            </StackPanel>
+                        </ToolTip>
+                    </ToolTipService.ToolTip>
+                </Image>
+            </Grid>
+        </DataTemplate>
 
     </Page.Resources>
 
