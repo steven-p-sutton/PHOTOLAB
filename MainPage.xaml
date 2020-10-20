@@ -28,8 +28,13 @@ Tutorial: Create custom styles
 
     Part 1: Create a fancy slider control
         - Customize a slider control
+    
     Part 2: Create basic styles
         - Create a value text block style
+    
+    Part 3: Use a control template to make a fancy slider
+        -
+    https://github.com/microsoft/microsoft-ui-xaml/blob/master/dev/Slider/Slider_themeresources.xaml
     
  -->
     
