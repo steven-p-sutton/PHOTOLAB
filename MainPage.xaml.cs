@@ -26,7 +26,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.Storage;
@@ -34,7 +33,6 @@ using Windows.Storage.Search;
 using Windows.Storage.Streams;
 using Windows.System.Profile;
 using Windows.UI.Core;
-using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
@@ -207,38 +205,6 @@ namespace PhotoLab
             {
                 ItemSize = ZoomSlider.Value;
             }
-        }
-
-        //Stackoverflow Exampe of Dialog Box
-        public async Task displayMessageAsync(String title, String content, String dialogType)
-        {
-            var messageDialog = new MessageDialog(content, title);
-            if (dialogType == "notification")
-            {
-                //Do nothing here.Display normal notification MessageDialog
-            }
-            else
-            {
-                //Dipplay questions-Yes or No- MessageDialog
-                messageDialog.Commands.Add(new UICommand("Yes", null));
-                messageDialog.Commands.Add(new UICommand("No", null));
-                messageDialog.DefaultCommandIndex = 0;
-            }
-
-            messageDialog.CancelCommandIndex = 1;
-            var cmdResult = await messageDialog.ShowAsync();
-            if (cmdResult.Label == "Yes")
-            {
-                Debug.WriteLine("My Dialog answer label is:: " + cmdResult.Label);
-            }
-            else
-            {
-                Debug.WriteLine("My Dialog answer label is:: " + cmdResult.Label);
-            }
-        }
-        public void OpenDetailsPage()
-        {
-            displayMessageAsync("Debug", "OpenDetailsPage ...", string.Empty);
         }
     }
 }

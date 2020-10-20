@@ -158,9 +158,6 @@
             <AppBarButton Icon="Zoom"
                           Label="Zoom"
                           Flyout="{StaticResource zoomFlyout}" />
-            <AppBarButton Icon="Placeholder"
-                          Label="Open Details Page"
-                          Click="{x:Bind OpenDetailsPage}" />
         </CommandBar>
 
         <GridView x:Name="ImageGridView"
