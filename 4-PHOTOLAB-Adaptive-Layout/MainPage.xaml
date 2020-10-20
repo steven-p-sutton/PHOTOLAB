@@ -37,6 +37,7 @@
 		    - Add a VisualStateManager
 		    - Create StateTriggers to apply the visual state
 		    - Set properties for each visual state
+    
  -->
 
 <Page x:Name="page"
