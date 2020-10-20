@@ -31,6 +31,13 @@
 
     	Part 2: Add a data template for small window sizes
 		    - Create a new DataTemplate
+            - Add metadata to a tooltip
+
+        Part 3: Define visual states
+            - Add a VisualStateManager
+            - Create StateTriggers to apply the visual state
+            - Set properties for each visual state
+            - 
  -->
 
 <Page x:Name="page"
@@ -179,6 +186,7 @@
         </CommandBar>
 
         <GridView x:Name="ImageGridView"
+                  ContainerContentChanging="ImageGridView_ContainerContentChanging"
                   animations:ReorderGridAnimation.Duration="400"
                   Margin="0,0,0,8"
                   ItemClick="ImageGridView_ItemClick"
@@ -193,7 +201,41 @@
                   ItemContainerStyle="{StaticResource ImageGridView_DefaultItemContainerStyle}">
         </GridView>
 
-        <!-- Add the VisualStateManager here -->
-        
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource LargeWindowBreakpoint}" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource MediumWindowBreakpoint}" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource MinWindowBreakpoint}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--
+                        <Setter Target="ImageGridView.ItemTemplate"
+                                Value="{StaticResource ImageGridView_SmallItemTemplate}" />
+                        <Setter Target="ImageGridView.ItemContainerStyle"
+                                Value="{StaticResource ImageGridView_SmallItemContainerStyle}" />
+
+                        <Setter Target="ZoomSlider.Minimum"
+                                Value="80" />
+                        <Setter Target="ZoomSlider.Maximum"
+                                Value="180" />
+                        <Setter Target="ZoomSlider.TickFrequency"
+                                Value="20" />
+                        <Setter Target="ZoomSlider.Value"
+                                Value="100" />
+                        -->
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
     </RelativePanel>
 </Page>

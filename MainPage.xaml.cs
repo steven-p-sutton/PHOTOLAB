@@ -206,5 +206,47 @@ namespace PhotoLab
                 ItemSize = ZoomSlider.Value;
             }
         }
+        private void ImageGridView_ContainerContentChanging(ListViewBase sender, ContainerContentChangingEventArgs args)
+        {
+            if (args.InRecycleQueue)
+            {
+                var templateRoot = args.ItemContainer.ContentTemplateRoot as Grid;
+                var image = (Image)templateRoot.FindName("ItemImage");
+
+                image.Source = null;
+            }
+
+            if (args.Phase == 0)
+            {
+                args.RegisterUpdateCallback(ShowImage);
+                args.Handled = true;
+            }
+        }
+
+        private async void ShowImage(ListViewBase sender, ContainerContentChangingEventArgs args)
+        {
+            if (args.Phase == 1)
+            {
+                // It's phase 1, so show this item's image.
+                var templateRoot = args.ItemContainer.ContentTemplateRoot as Grid;
+                var image = (Image)templateRoot.FindName("ItemImage");
+                image.Opacity = 100;
+
+                var item = args.Item as ImageFileInfo;
+
+                try
+                {
+                    image.Source = await item.GetImageThumbnailAsync();
+                }
+                catch (Exception)
+                {
+                    // File could be corrupt, or it might have an image file
+                    // extension, but not really be an image file.
+                    BitmapImage bitmapImage = new BitmapImage();
+                    bitmapImage.UriSource = new Uri(image.BaseUri, "Assets/StoreLogo.png");
+                    image.Source = bitmapImage;
+                }
+            }
+        }
     }
 }
