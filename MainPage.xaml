@@ -28,6 +28,9 @@ Tutorial: Create custom styles
 
     Part 1: Create a fancy slider control
         - Customize a slider control
+    Part 2: Create basic styles
+        - Create a value text block style
+    
  -->
     
 <Page x:Name="page"
