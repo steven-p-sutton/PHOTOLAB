@@ -170,8 +170,21 @@
                                             Margin="0,0,0,16">
                         </muxc:RatingControl>
 
+                        <Polygon Grid.Row="2" Stretch="Fill"
+                            Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center" Height="20">
+                            <Polygon.Fill>
+                                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Offset="0" Color="Black" />
+                                        <GradientStop Offset="1" Color="White" />
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Polygon.Fill>
+                        </Polygon>
                         <Slider Header="Exposure"
                                 Grid.Row="2"
+                                Foreground="Transparent"
                                 Value="{x:Bind item.Exposure, Mode=TwoWay}"
                                 Minimum="-2"
                                 Maximum="2"/>
