@@ -23,19 +23,21 @@
 -->
 
 <!--
-Tutorial: Create custom styles
-    https://docs.microsoft.com/en-us/windows/uwp/design/basics/xaml-basics-style#prerequisites
+Tutorial: Create custom styles - PhotoLab 
+	https://docs.microsoft.com/en-us/windows/uwp/design/basics/xaml-basics-style
 
-    Part 1: Create a fancy slider control
-        - Customize a slider control
+	Part 1: Create a fancy slider control
+		- Customize a slider control
+		https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes?view=winrt-19041
+		https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/shapes
     
-    Part 2: Create basic styles
-        - Create a value text block style
-    
-    Part 3: Use a control template to make a fancy slider
-        -
-    https://github.com/microsoft/microsoft-ui-xaml/blob/master/dev/Slider/Slider_themeresources.xaml
-    
+	Part 2: Create basic styles
+		https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Style?view=winrt-19041
+		https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources?view=winrt-19041
+		- Create a value text block style
+
+	Part 3: Use a control template to make a fancy slider
+		https://docs.microsoft.com/en-us/windows/uwp/design/basics/xaml-basics-style#prerequisites    
  -->
     
 <Page x:Name="page"
