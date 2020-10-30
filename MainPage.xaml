@@ -23,6 +23,10 @@
 -->
 
 <!--
+//////////////////////////////////////////////////////////////////////////////////////
+// REBASE code as copy of 5-PhotoLab-Final
+//////////////////////////////////////////////////////////////////////////////////////
+
     Tutorial: Create a user interface - PhotoLab 
 	https://docs.microsoft.com/en-us/windows/uwp/design/basics/xaml-basics-ui
 
@@ -84,7 +88,6 @@ Tutorial: Create custom styles - PhotoLab
         - Customize a slider control
         - 
     
-
 -->
 
 <Page x:Name="page"
